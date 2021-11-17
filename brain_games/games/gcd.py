@@ -10,9 +10,9 @@ def get_gcd(a, b):
 
     while first_num != 0 and second_num != 0:
         if first_num > second_num:
-            first_num = first_num % second_num
+            first_num %= second_num
         else:
-            second_num = second_num % first_num
+            second_num %= first_num
 
     return first_num + second_num
 

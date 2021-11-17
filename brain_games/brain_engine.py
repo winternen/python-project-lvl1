@@ -1,17 +1,17 @@
 import prompt
 
 
-def game_engine(gamemode):
+def run_game(game):
     print('Welcome to the Brain Games!')
     player_name = prompt.string('May I have your name? ')
     print(f'Hello, {player_name}')
-    print(gamemode.description)
+    print(game.description)
 
     first_round = 1
     last_round = 3
 
     while first_round <= last_round:
-        (question, correct_answer) = gamemode.generate_game()
+        (question, correct_answer) = game.generate_game()
 
         print(f'Question: {question}')
         player_answer = prompt.string('Your answer: ')
