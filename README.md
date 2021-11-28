@@ -1,4 +1,4 @@
-#The Brain Games
+# The Brain Games
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/winternen/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/winternen/python-project-lvl1/actions)
