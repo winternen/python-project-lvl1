@@ -1,7 +1,9 @@
 from random import randint
 
 
-description = 'Find the greatest common divisor of given numbers.'
+DESCRIPTION = 'Find the greatest common divisor of given numbers.'
+START_RANGE = 1
+MAX_RANGE = 100
 
 
 def get_gcd(a, b):
@@ -18,8 +20,8 @@ def get_gcd(a, b):
 
 
 def generate_game():
-    first_number = randint(1, 100)
-    second_number = randint(1, 100)
+    first_number = randint(START_RANGE, MAX_RANGE)
+    second_number = randint(START_RANGE, MAX_RANGE)
 
     question = f'{first_number} {second_number}'
     correct_answer = str(get_gcd(first_number, second_number))

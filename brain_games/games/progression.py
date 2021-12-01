@@ -1,7 +1,9 @@
 from random import randint
 
 
-description = 'What number is missing in the progression?'
+DESCRIPTION = 'What number is missing in the progression?'
+START_RANGE = 1
+MAX_RANGE = 100
 
 
 def get_progression(begin, step, length):
@@ -15,17 +17,26 @@ def get_progression(begin, step, length):
     return result
 
 
-def generate_game():
-    first_number = randint(1, 100)
-    step = randint(1, 100)
-    length = randint(5, 10)
+def hide_progression_number(list):
+    progression = list
+    progression_len = len(progression) - 1
 
-    progression = get_progression(first_number, step, length)
+    hidden_pos = randint(0, progression_len)
     hidden_char = '..'
-    hidden_pos = randint(0, len(progression) - 1)
+    hidden_number = str(progression[hidden_pos])
 
-    correct_answer = str(progression[hidden_pos])
     progression[hidden_pos] = hidden_char
-    question = ' + '.join(map(str, progression))
+    hidden_progression = ' '.join(map(str, progression))
+
+    return hidden_number, hidden_progression
+
+
+def generate_game():
+    first_number = randint(START_RANGE, MAX_RANGE)
+    step = randint(START_RANGE, MAX_RANGE)
+    progression_length = randint(5, 10)
+    progression = get_progression(first_number, step, progression_length)
+
+    correct_answer, question = hide_progression_number(progression)
 
     return question, correct_answer

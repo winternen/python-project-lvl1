@@ -2,7 +2,9 @@ from random import randint
 from random import choice
 
 
-description = 'What is the result of the expression?'
+DESCRIPTION = 'What is the result of the expression?'
+START_RANGE = 1
+MAX_RANGE = 100
 
 
 def generate_operator():
@@ -11,8 +13,8 @@ def generate_operator():
 
 
 def generate_game():
-    first_operand = randint(1, 100)
-    second_operand = randint(1, 100)
+    first_operand = randint(START_RANGE, MAX_RANGE)
+    second_operand = randint(START_RANGE, MAX_RANGE)
     operator = generate_operator()
 
     expression_result = {

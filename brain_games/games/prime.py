@@ -1,7 +1,9 @@
 from random import randint
 
 
-description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+START_RANGE = 1
+MAX_RANGE = 100
 
 
 def is_prime(num):
@@ -20,7 +22,9 @@ def is_prime(num):
 
 
 def generate_game():
-    question = randint(1, 1000)
+    random_number = randint(START_RANGE, MAX_RANGE)
+
+    question = random_number
     correct_answer = 'yes' if is_prime(question) else 'no'
 
     return question, correct_answer

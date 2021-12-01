@@ -1,7 +1,9 @@
 from random import randint
 
 
-description = 'Answer "yes" if the number is even, otherwise answer "no".'
+DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
+START_RANGE = 1
+MAX_RANGE = 100
 
 
 def is_even(number):
@@ -9,6 +11,8 @@ def is_even(number):
 
 
 def generate_game():
-    question = randint(1, 100)
+    random_number = randint(START_RANGE, MAX_RANGE)
+
+    question = random_number
     correct_answer = 'yes' if is_even(question) else 'no'
     return question, correct_answer
